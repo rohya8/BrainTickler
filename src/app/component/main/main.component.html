@@ -1,0 +1,55 @@
+<div class="container">
+        <div *ngIf="!joke" class="d-flex justify-content-center">
+           
+            <div class="spinner-grow text-primary spinnerspacing" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+              <div class="spinner-grow text-light spinnerspacing" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+              <div class="spinner-grow text-primary spinnerspacing" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+              <div class="spinner-grow text-light spinnerspacing" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+              <div class="spinner-grow text-primary spinnerspacing" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+    </div>
+    <div *ngIf="joke" class="d-flex flex-column">
+        
+        <div class="d-flex flex-row justify-content-between bottom-margin">
+            
+            <button  *ngIf="themeDark" class="btn  btn-primary" (click)=loadThemeA()>Light</button>
+            <button  *ngIf="!themeDark" class="btn  btn-primary" (click)=loadThemeB()>Dark</button>
+
+            <button class="btn  btn-primary" (click)=retrieveNew()><i class="fa fa-refresh" aria-hidden="true"></i></button>
+        </div>
+
+        <div class="card border-primary mb-3">
+            <div class="card">
+                <div class="card-header">
+                    <h2 *ngIf="joke">{{ joke }}</h2>
+                </div>
+                <div class="card-body flex-row d-flex justify-content-around">
+                    <a [href]="getTweetURL()" class="card-link"><i class="fa fa-twitter" aria-hidden="true"></i>  Share on Twitter</a>
+                    <a [href]="getWhatsappUrl()" data-action="share/whatsapp/share" 
+                    data-text="Take a look at this awesome website:" class="card-link"><i class="fa fa-whatsapp" aria-hidden="true"></i>  Share on WhatsApp</a>
+                    <!-- <a href="" class="card-link"><i class="fa fa-facebook" aria-hidden="true"></i>  Share on Facebook</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container text-muted">
+        Legal disclaimer: This website and its creators are not affiliated with any one, any motion picture corporation, 
+                any television corporation, parent, or affiliate corporation. All motion pictures, products, and brands
+                 mentioned on this website are the respective trademarks and copyrights of their owners. All material
+                  on this website is intended for humorous entertainment (satire ) purposes only. The content on this 
+                  website is not necessarily true and should not be regarded as truth.
+    </div>
+</footer>
+
+
