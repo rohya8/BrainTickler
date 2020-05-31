@@ -21,10 +21,10 @@
         
         <div class="d-flex flex-row justify-content-between bottom-margin">
             
-            <button  *ngIf="themeDark" class="btn  btn-primary" (click)=loadThemeA()>Light</button>
-            <button  *ngIf="!themeDark" class="btn  btn-primary" (click)=loadThemeB()>Dark</button>
+            <button name="light" *ngIf="themeDark" class="btn  btn-primary" (click)=loadThemeA()>Light</button>
+            <button name="dark" *ngIf="!themeDark" class="btn  btn-primary" (click)=loadThemeB()>Dark</button>
 
-            <button class="btn  btn-primary" (click)=retrieveNew()><i class="fa fa-refresh" aria-hidden="true"></i></button>
+            <button name="refresh" class="btn  btn-primary" (click)=retrieveNew()><i class="fa fa-refresh" aria-hidden="true"></i></button>
         </div>
 
         <div class="card border-primary mb-3">

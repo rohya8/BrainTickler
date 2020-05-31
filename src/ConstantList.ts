@@ -72,8 +72,8 @@ export const list = [
 ];
 
 export const THEME = {
-    'UNITED': 'https://bootswatch.com/4/united/bootstrap.min.css',
-    'DARK': 'https://bootswatch.com/4/darkly/bootstrap.min.css'
+    'UNITED': 'assets/stylesheets/united.css',
+    'DARK': 'assets/stylesheets/darkly.css'
 };
 export const URL = {
     'DAD': 'https://icanhazdadjoke.com/',

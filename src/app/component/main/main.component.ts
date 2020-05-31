@@ -17,8 +17,9 @@ export class MainComponent implements OnInit {
   shareUrl = URL.APP;
 
   ngOnInit(): void {
-    //this.loadThemeA();
-
+    if (localStorage.getItem('BT_THEME') === 'darkly') {
+      this.loadThemeB();
+    }
     this.fetchJokes();
   }
 
@@ -28,11 +29,7 @@ export class MainComponent implements OnInit {
     if (num % 5 === 0) {
       this.joke = list[num];
     } else {
-      let url = URL.DAD;
-      if (num % 3 === 0) {
-        url = URL.CN;
-      } else {
-      }
+      const url = (num % 3 === 0) ? URL.CN : URL.DAD;
       this.commonService.getJokes(url).subscribe((resp) => {
         if (resp) {
           this.joke = resp['value'] ? resp['value'] : (resp['joke'] ? resp['joke'] : list[num]);
@@ -46,7 +43,6 @@ export class MainComponent implements OnInit {
   }
 
   retrieveNew() {
-
     this.fetchJokes();
   }
 
@@ -54,15 +50,17 @@ export class MainComponent implements OnInit {
     this.themeDark = false;
     this.loadTheme(THEME.UNITED);
   }
+
   loadThemeB() {
     this.themeDark = true;
     this.loadTheme(THEME.DARK);
   }
 
   loadTheme(url) {
+    localStorage.setItem('BT_THEME', (this.themeDark ? 'darkly' : 'united'));
     const linklist = this.doc.getElementsByTagName('link');
     for (const i in linklist) {
-      if (linklist[i].rel && linklist[i].href.includes('bootswatch')) {
+      if (linklist[i].rel && linklist[i].href.includes('assets/stylesheets')) {
         linklist[i].href = url;
         break;
       }
