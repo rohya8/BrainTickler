@@ -20,7 +20,8 @@ export class MainComponent implements OnInit {
     if (localStorage.getItem('BT_THEME') === 'darkly') {
       this.loadThemeB();
     }
-    this.fetchJokes();
+    this.joke = list[17];
+    // this.fetchJokes();
   }
 
   private fetchJokes() {

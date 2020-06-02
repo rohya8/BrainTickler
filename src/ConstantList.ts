@@ -78,6 +78,6 @@ export const THEME = {
 export const URL = {
     'DAD': 'https://icanhazdadjoke.com/',
     'CN': 'https://api.chucknorris.io/jokes/random',
-    'APP': 'www.google.com'
+    'APP': 'https://braintickler.firebaseapp.com/'
 };
 
