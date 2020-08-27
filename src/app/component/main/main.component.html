@@ -24,6 +24,7 @@
           *ngIf="themeDark"
           class="btn btn-primary"
           (click)="loadThemeA()"
+          aria-label="light"
         >
           Light
         </button>
@@ -32,11 +33,18 @@
           *ngIf="!themeDark"
           class="btn btn-primary"
           (click)="loadThemeB()"
+          aria-label="dark"
         >
           Dark
         </button>
 
-        <button name="refresh" class="btn btn-primary" (click)="retrieveNew()">
+        aria-label ="dark"
+        <button
+          name="refresh"
+          aria-label="Next"
+          class="btn btn-primary"
+          (click)="retrieveNew()"
+        >
           <i class="fa fa-arrow-right" aria-hidden="true"></i>
         </button>
       </div>
@@ -47,7 +55,10 @@
             <h2 *ngIf="joke">{{ joke }}</h2>
           </div>
           <div class="card-body flex-row d-flex justify-content-around">
-            <a [href]="getTweetURL()" class="card-link"
+            <a
+              [href]="getTweetURL()"
+              class="card-link"
+              aria-label="Share on Twitter"
               ><i class="fa fa-twitter" aria-hidden="true"></i> Share on
               Twitter</a
             >
@@ -56,6 +67,7 @@
               data-action="share/whatsapp/share"
               data-text="Take a look at this awesome website:"
               class="card-link"
+              aria-label="Share on WhatsApp"
               ><i class="fa fa-whatsapp" aria-hidden="true"></i> Share on
               WhatsApp</a
             >
@@ -78,8 +90,10 @@
   </div>
   <p class="text-center">
     Developed by
-    <a href="https://www.linkedin.com/in/rohit-wadke/">Rohit Wadke</a>
-    <a href="https://twitter.com/braintickler_"
+    <a href="https://www.linkedin.com/in/rohit-wadke/" aria-label="LinkedIn"
+      >Rohit Wadke</a
+    >
+    <a href="https://twitter.com/braintickler_" aria-label="Share on Twitter"
       ><i class="fa fa-twitter" aria-hidden="true"></i
     ></a>
   </p>
