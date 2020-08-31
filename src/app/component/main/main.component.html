@@ -22,7 +22,7 @@
         <button
           name="light"
           *ngIf="themeDark"
-          class="btn btn-primary"
+          class="btn btn-primary text-size"
           (click)="loadThemeA()"
           aria-label="light"
         >
@@ -31,14 +31,13 @@
         <button
           name="dark"
           *ngIf="!themeDark"
-          class="btn btn-primary"
+          class="btn btn-primary text-size"
           (click)="loadThemeB()"
           aria-label="dark"
         >
           Dark
         </button>
 
-        aria-label ="dark"
         <button
           name="refresh"
           aria-label="Next"
@@ -57,7 +56,7 @@
           <div class="card-body flex-row d-flex justify-content-around">
             <a
               [href]="getTweetURL()"
-              class="card-link"
+              class="card-link text-size"
               aria-label="Share on Twitter"
               ><i class="fa fa-twitter" aria-hidden="true"></i> Share on
               Twitter</a
@@ -66,7 +65,7 @@
               [href]="getWhatsappUrl()"
               data-action="share/whatsapp/share"
               data-text="Take a look at this awesome website:"
-              class="card-link"
+              class="card-link text-size"
               aria-label="Share on WhatsApp"
               ><i class="fa fa-whatsapp" aria-hidden="true"></i> Share on
               WhatsApp</a
@@ -79,7 +78,7 @@
   </div>
 </div>
 <footer class="footer">
-  <div class="container text-muted">
+  <div class="container text-muted disp-size">
     Legal disclaimer: This website and its creators are not affiliated with any
     one, any motion picture corporation, any television corporation, parent, or
     affiliate corporation. All motion pictures, products, and brands mentioned
@@ -88,7 +87,7 @@
     (satire) purposes only. The content on this website is not necessarily true
     and should not be regarded as truth.
   </div>
-  <p class="text-center">
+  <p class="text-center ">
     Developed by
     <a href="https://www.linkedin.com/in/rohit-wadke/" aria-label="LinkedIn"
       >Rohit Wadke</a

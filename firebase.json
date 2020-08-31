@@ -8,6 +8,10 @@
     ],
     "rewrites": [
       {
+        "source": "/robots.txt",
+        "destination": "src/robots.txt"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
